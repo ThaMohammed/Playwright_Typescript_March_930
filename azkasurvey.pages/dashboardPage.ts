@@ -17,12 +17,11 @@ export class dashboardPage {
     await this.backbutton.scrollIntoViewIfNeeded();
     await this.page.waitForTimeout(2000);
     await this.backbutton.highlight();
-    await this.page.waitForTimeout(2000);
     await this.backbutton.hover();
     await this.backbutton.click();
 
-    let drag=this.page.getByRole("link", { name: "Back" })
-    let drop=this.page.getByRole("link", { name: "Back" })
-    await drag.dragTo(drop)
+    let drag = this.page.getByRole("link", { name: "Back" });
+    let drop = this.page.getByRole("link", { name: "Back" });
+    await drag.dragTo(drop);
   }
 }
