@@ -38,7 +38,7 @@ test.describe("fill form functionality", () => {
     let datafile = fs.readFileSync(`./testData/azkasurvey_${env}.json`, "utf-8");
     let jData = await JSON.parse(datafile);
 
-    let browser: Browser = await chromium.launch({ headless: false });
+    let browser: Browser = await chromium.launch({ headless: true });
     let context = await browser.newContext({
       recordVideo: { dir: `./videos/${formattedDate}` },
     });
@@ -81,7 +81,7 @@ test.describe("fill form functionality", () => {
 
 test.describe("Dashboard functionality", () => {
   test.beforeEach("start test", async () => {
-    let browser: Browser = await webkit.launch({ headless: false });
+    let browser: Browser = await webkit.launch({ headless: true });
     let context = await browser.newContext();
     page = await context.newPage();
     let uiHelper = new uiHelpers(page);
